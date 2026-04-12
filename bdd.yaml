@@ -1,0 +1,5 @@
+path: data/bdd_sample
+train: .
+val: .
+names:
+  0: vehicleimport 
