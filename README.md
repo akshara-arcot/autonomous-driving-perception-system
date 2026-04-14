@@ -9,7 +9,6 @@ This project brings together some of the most effective tools in modern computer
 
 To make this practical and fast, the inference is optimized with TensorRT using both FP16 and INT8 precision. The whole system is packaged for deployment using Docker and NVIDIA Triton, making it straightforward to scale. The goal was to build something that reflects how a real production ML system is designed and optimized.
 
----
 
 ## Key Features
 
@@ -22,7 +21,6 @@ To make this practical and fast, the inference is optimized with TensorRT using 
 - NVIDIA Triton Inference Server integration for scalable serving
 - Modular ML system design that makes each component easy to swap or extend
 
----
 
 ## System Architecture
 
@@ -44,7 +42,10 @@ Fusion Layer
     v
 Scene Reasoning
 ```
----
+
+
+
+
 
 ## Model Optimization
 
@@ -52,30 +53,27 @@ Getting a model to run accurately and getting it to run fast enough for real-tim
 
 | Backend            | Precision | FPS     |
 |--------------------|-----------|---------|
-| PyTorch (Baseline) | FP32      | ~34.99  |
+| PyTorch (Baseline) | FP32      | ~35 FPS |
 | TensorRT           | FP16      | ~38 FPS |
 | TensorRT           | INT8      | ~41 FPS |
 
 The jump from FP16 to INT8 delivered around an 8% improvement in throughput — a meaningful gain in a latency-sensitive system — with only a minor reduction in numerical precision.
 
----
 
 ## Fine-Tuning
 
 Instead of relying on a generic pretrained model, YOLOv8 was fine-tuned on the [BDD100K dataset](https://bdd-data.berkeley.edu/). It is a dataset built from real driving footage across different times of day, weather conditions, and road environments. 
 
----
 ## Results
 
 | Metric              | Value |
 |---------------------|-------|
-| Baseline YOLOv8 FPS | ~35     |
+| Baseline YOLOv8 FPS | ~35   |
 | TensorRT FP16 FPS   | ~38   |
 | TensorRT INT8 FPS   | ~41   |
-| Fine-tuned mAP50    | ~     |
+| Fine-tuned mAP50    | ~0.4  |
 
 
----
 
 ## Deployment
 
@@ -102,7 +100,6 @@ docker run --rm -it -p 8000:8000 -p 8001:8001 -p 8002:8002 -v $(pwd)/model_repos
 
 > **Note:** TensorRT requires an NVIDIA GPU. For CPU-only environments, the ONNX backend via Docker is recommended.Triton execution was validated at server level.
 
----
 
 ## Tech Stack
 
@@ -115,7 +112,6 @@ docker run --rm -it -p 8000:8000 -p 8001:8001 -p 8002:8002 -v $(pwd)/model_repos
 | Containerization       | Docker                          |
 | Training Dataset       | BDD100K                         |
 
----
 
 
 ## License
