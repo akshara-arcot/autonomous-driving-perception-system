@@ -43,8 +43,7 @@ Fusion Layer
 Scene Reasoning
 ```
 
-
-
+![output_2](https://github.com/user-attachments/assets/d1e757ce-12bb-4f5e-8131-c259603bcabf)
 
 
 ## Model Optimization
