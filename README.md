@@ -1,3 +1,5 @@
+![output_3](https://github.com/user-attachments/assets/5004343d-22d9-4ed9-8703-3b1972f6dea6)
+![output_3](https://github.com/user-attachments/assets/f7045bb4-ce38-4584-b465-d4cca221a0bb)
 # Autonomous Driving Perception System
 
 A production-level machine learning system built to handle the full perception stack for autonomous driving — from raw video input to scene-level understanding.
@@ -42,6 +44,8 @@ Fusion Layer
     v
 Scene Reasoning
 ```
+
+![output_3](https://github.com/user-attachments/assets/6b09b00b-8772-4ee0-9c95-73240beb95b6)
 
 ![output_2](https://github.com/user-attachments/assets/d1e757ce-12bb-4f5e-8131-c259603bcabf)
 
