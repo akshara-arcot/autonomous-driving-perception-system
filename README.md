@@ -1,5 +1,4 @@
-![output_3](https://github.com/user-attachments/assets/5004343d-22d9-4ed9-8703-3b1972f6dea6)
-![output_3](https://github.com/user-attachments/assets/f7045bb4-ce38-4584-b465-d4cca221a0bb)
+
 # Autonomous Driving Perception System
 
 A production-level machine learning system built to handle the full perception stack for autonomous driving — from raw video input to scene-level understanding.
@@ -91,6 +90,9 @@ docker build -t perception-app .
 # Run the container
 docker run --rm -e OMP_NUM_THREADS=6  -v "$(pwd)/outputs:/app/outputs"  perception-app
 ```
+<img width="1526" height="496" alt="Screenshot 2026-04-14 at 6 15 30 PM" src="https://github.com/user-attachments/assets/97362b43-0053-4051-9caa-fa265ba15ed5" />
+
+![val_batch1_labels](https://github.com/user-attachments/assets/fc2456a1-d74e-4a51-ac87-9c7828837699)
 
 ### NVIDIA Triton Inference Server
 
@@ -100,6 +102,7 @@ For GPU-accelerated serving at scale, the model is packaged in the Triton model 
 # Start the Triton Inference Server
 docker run --rm -it -p 8000:8000 -p 8001:8001 -p 8002:8002 -v $(pwd)/model_repository:/models nvcr.io/nvidia/tritonserver:23.10-py3 tritonserver --model-repository=/models
 ```
+<img width="970" height="265" alt="image" src="https://github.com/user-attachments/assets/41617f9c-05a1-484d-93de-642e6471bb1e" />
 
 > **Note:** TensorRT requires an NVIDIA GPU. For CPU-only environments, the ONNX backend via Docker is recommended.Triton execution was validated at server level.
 
