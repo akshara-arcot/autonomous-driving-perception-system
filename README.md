@@ -66,6 +66,10 @@ The jump from FP16 to INT8 delivered around an 8% improvement in throughput — 
 
 Instead of relying on a generic pretrained model, YOLOv8 was fine-tuned on the [BDD100K dataset](https://bdd-data.berkeley.edu/). It is a dataset built from real driving footage across different times of day, weather conditions, and road environments. 
 
+![val_batch2_pred](https://github.com/user-attachments/assets/2184df82-a020-477a-bedc-7e63cd8c9128)
+
+*YOLOv8 fine-tuned on BDD100K — detection results across diverse driving conditions including day, night, and urban environments.*
+
 
 ## Results
 
@@ -119,6 +123,11 @@ docker run --rm -it -p 8000:8000 -p 8001:8001 -p 8002:8002 -v $(pwd)/model_repos
 | Containerization       | Docker                          |
 | Training Dataset       | BDD100K                         |
 
+## Future Work
+
+- Kubernetes-based scaling and load balancing
+- Model monitoring and CI/CD integration (MLOps extension)
+- Multi-sensor fusion (LiDAR, radar integration)
 
 
 ## License
